@@ -32,16 +32,16 @@ A hardware-accelerated transcoder for Intel QSV, AMD AMF, and NVIDIA NVENC, and 
 ### 1. Intel Quick Sync Video (QSV) Support
 | Platform Name | Graphics Generation | Adds Support For... |
 | :--- | :--- | :--- |
-| Ironlake / Sandy Bridge | gen5 / gen6 | MPEG-2, H.264 decode. VC-1 decode; [cite_start]H.264 encode. [cite: 26] |
-| Ivy Bridge / Bay Trail / Haswell | gen7 / gen7 / gen7.5 | JPEG decode; [cite_start]MPEG-2 encode. [cite: 26] |
-| Broadwell / Braswell | gen8 / gen8 | VP8 decode. H.265 decode; [cite_start]JPEG, VP8 encode. [cite: 26] |
-| Skylake | gen9 | [cite_start]H.265 encode. [cite: 26] |
-| Apollo Lake | gen9 | [cite_start]VP9, H.265 Main10 decode. [cite: 26] |
-| Kaby Lake / Coffee Lake | gen9.5 / gen9.5 | VP9 profile 2 decode; [cite_start]VP9, H.265 Main10 encode. [cite: 26] |
-| Gemini Lake / Cannon Lake / Ice Lake | gen10 / gen11 | H.265 8-bit 422/444 decode/encode; [cite_start]VP9 8/10-bit 444 decode/encode[cite: 26]. |
-| Tiger Lake / Rocket Lake | gen12 / gen12 | AV1 8/10-bit; H.265 12-bit decode; [cite_start]VP9 12-bit decode[cite: 26]. |
-| DG1 / SG1 / Alder Lake / Raptor Lake | gen12 | [cite_start]VP8 encode removed[cite: 26]. |
-| DG2 | gen12 | [cite_start]AV1 encode[cite: 26]. |
+| Ironlake / Sandy Bridge | gen5 / gen6 | MPEG-2, H.264 decode. VC-1 decode; H.264 encode. |
+| Ivy Bridge / Bay Trail / Haswell | gen7 / gen7 / gen7.5 | JPEG decode; MPEG-2 encode. |
+| Broadwell / Braswell | gen8 / gen8 | VP8 decode. H.265 decode; JPEG, VP8 encode. |
+| Skylake | gen9 | H.265 encode. |
+| Apollo Lake | gen9 | VP9, H.265 Main10 decode. |
+| Kaby Lake / Coffee Lake | gen9.5 / gen9.5 | VP9 profile 2 decode; VP9, H.265 Main10 encode. |
+| Gemini Lake / Cannon Lake / Ice Lake | gen10 / gen11 | H.265 8-bit 422/444 decode/encode; VP9 8/10-bit 444 decode/encode. |
+| Tiger Lake / Rocket Lake | gen12 / gen12 | AV1 8/10-bit; H.265 12-bit decode; VP9 12-bit decode. |
+| DG1 / SG1 / Alder Lake / Raptor Lake | gen12 | VP8 encode removed. |
+| DG2 | gen12 | AV1 encode. |
 
 ---
 
