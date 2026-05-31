@@ -104,27 +104,27 @@ A hardware-accelerated transcoder for Intel QSV, AMD AMF, and NVIDIA NVENC, and 
 #### H.265/HEVC Capabilities
 | Hardware Features | 1st Gen Maxwell | 2nd Gen Maxwell | Pascal | Volta / TU117 | Ampere / TU | Ada | Jetson Thor | Blackwell |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Main profile (YUV 4:2:0)** | N | Y | Y | Y | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **Lossless encoding** | N | N | Y | Y | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **Main 10 profile (10-bit)** | N | N | Y | Y | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **4:2:2 encoding** | N | N | N | N | N | N | N | [cite_start]Y [cite: 77] |
-| **4:4:4 encoding** | N | N | Y | Y | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **8K encoding (8192x8192)** | N | N | Y | Y | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **Weighted prediction** | N | N | Y | Y | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **B Frame support** | N | N | N | N | Y | Y | Y | [cite_start]Y [cite: 77] |
-| **Multiple reference frames** | N | N | N | N | Y | Y | Y | [cite_start]Y [cite: 77] |
+| **Main profile (YUV 4:2:0)** | N | Y | Y | Y | Y | Y | Y | Y |
+| **Lossless encoding** | N | N | Y | Y | Y | Y | Y | Y |
+| **Main 10 profile (10-bit)** | N | N | Y | Y | Y | Y | Y | Y |
+| **4:2:2 encoding** | N | N | N | N | N | N | N | Y |
+| **4:4:4 encoding** | N | N | Y | Y | Y | Y | Y | Y |
+| **8K encoding (8192x8192)** | N | N | Y | Y | Y | Y | Y | Y |
+| **Weighted prediction** | N | N | Y | Y | Y | Y | Y | Y |
+| **B Frame support** | N | N | N | N | Y | Y | Y | Y |
+| **Multiple reference frames** | N | N | N | N | Y | Y | Y | Y |
 
 #### H.264/AVC Capabilities
 | Hardware Features | 1st Gen Maxwell | 2nd Gen Maxwell | Pascal | Volta / TU117 | Ampere / TU | Ada | Jetson Thor | Blackwell |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Baseline main/high (YUV 420)**| Y | Y | Y | Y | Y | Y | Y | [cite_start]Y [cite: 81] |
-| **High 10 profile (10-bit)** | N | N | N | N | N | N | N | [cite_start]Y [cite: 81] |
-| **4:2:2 encoding** | N | N | N | N | N | N | N | [cite_start]Y [cite: 81] |
-| **4:4:4 encoding (CAVLC only)** | Y | Y | Y | Y | Y | Y | Y | [cite_start]Y [cite: 81] |
-| **Lossless encoding** | Y | Y | Y | Y | Y | Y | Y | [cite_start]Y [cite: 81] |
-| **Field encoding** | Y | Y | Y | Y | N | N | N | [cite_start]Y [cite: 81] |
-| **Weighted prediction** | N | N | Y | Y | Y | Y | Y | [cite_start]Y [cite: 81] |
-| **Multiple reference frames** | N | N | N | N | Y | Y | Y | [cite_start]Y [cite: 81] |
+| **Baseline main/high (YUV 420)**| Y | Y | Y | Y | Y | Y | Y | Y |
+| **High 10 profile (10-bit)** | N | N | N | N | N | N | N | Y |
+| **4:2:2 encoding** | N | N | N | N | N | N | N | Y |
+| **4:4:4 encoding (CAVLC only)** | Y | Y | Y | Y | Y | Y | Y | Y |
+| **Lossless encoding** | Y | Y | Y | Y | Y | Y | Y | Y |
+| **Field encoding** | Y | Y | Y | Y | N | N | N | Y |
+| **Weighted prediction** | N | N | Y | Y | Y | Y | Y | Y |
+| **Multiple reference frames** | N | N | N | N | Y | Y | Y | Y |
 
 * **Y**: Supported | [cite_start]**N**: Not supported[cite: 78, 82].
 * [cite_start]*\*Supported in select Pascal generation GPUs[cite: 79, 83].*
