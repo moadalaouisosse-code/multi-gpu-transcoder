@@ -5,25 +5,25 @@ A hardware-accelerated transcoder for Intel QSV, AMD AMF, and NVIDIA NVENC, and 
 ---
 
 ## 📋 Requirements & Quick Start
-* [cite_start]**OS:** Windows 7 or above[cite: 4].
-* [cite_start]**Hardware:** Intel, AMD, or NVIDIA GPU[cite: 4].
-* **SmartScreen Warning:** Expected for unsigned software. [cite_start]Click *More info* -> *Run anyway*[cite: 86].
-* [cite_start]**Temperature Throttling:** For battery preservation over performance, install [Core Temp](https://www.alcpu.com/CoreTemp) and ensure it's running in the background[cite: 20, 22]. [cite_start]If it isn't running, throttling is silently disabled[cite: 87]. [cite_start]Note that all modern chips have native integrated throttling systems[cite: 21].
+* **OS:** Windows 7 or above.
+* **Hardware:** Intel, AMD, or NVIDIA GPU.
+* **SmartScreen Warning:** Expected for unsigned software. Click *More info* -> *Run anyway*.
+* **Temperature Throttling:** For battery preservation over performance, install [Core Temp](https://www.alcpu.com/CoreTemp) and ensure it's running in the background. If it isn't running, throttling is silently disabled. Note that all modern chips have native integrated throttling systems.
 
 ---
 
 ## 🛠️ App Glossary
 
 ### Encoders
-* **QSV/AMF/NVENC Transcoders:** Use a full GPU decode/encode path. [cite_start]Fastest encoders[cite: 9].
-* **QSV/AMF/NVENC Hybrid Transcoders:** Use a CPU decode/GPU encode path. Bypasses all/most GPU limitations. [cite_start]Very fast encoders[cite: 10].
-* **libx264/libx265 Transcoders:** Use a full CPU decode/encode path. [cite_start]Slowest, most compatible encoders[cite: 11].
+* **QSV/AMF/NVENC Transcoders:** Use a full GPU decode/encode path. Fastest encoders.
+* **QSV/AMF/NVENC Hybrid Transcoders:** Use a CPU decode/GPU encode path. Bypasses all/most GPU limitations. Very fast encoders.
+* **libx264/libx265 Transcoders:** Use a full CPU decode/encode path. Slowest, most compatible encoders.
 
 ### Codecs & Pixel Formats
-* [cite_start]**HEVC/H.265:** Slower, but offers better compression and quality preservation[cite: 17].
-* [cite_start]**AVC/H.264:** Fastest, acceptable compression, compatible with legacy hardware[cite: 17].
-* [cite_start]**Pixel Formats:** `Orig` (Same as source, including 12-bit+ and 5-bit-), `8 bit` (SDR Limited Range), and `10 bit` (HDR)[cite: 13, 14, 15].
-* **Quality:** Controls the bitrate (and file size). [cite_start]A higher value reduces the bitrate[cite: 18].
+* **HEVC/H.265:** Slower, but offers better compression and quality preservation.
+* **AVC/H.264:** Fastest, acceptable compression, compatible with legacy hardware.
+* **Pixel Formats:** `Orig` (Same as source, including 12-bit+ and 5-bit-), `8 bit` (SDR Limited Range), and `10 bit` (HDR).
+* **Quality:** Controls the bitrate (and file size). A higher value reduces the bitrate.
 
 ---
 
@@ -73,28 +73,28 @@ A hardware-accelerated transcoder for Intel QSV, AMD AMF, and NVIDIA NVENC, and 
 | Advanced Systems Format | `.asf` `.wmv` | Y | Y | Y |
 | QuickTime File Format | `.mov` | Y | Y | n/a |
 
-* [cite_start]**Y**: Hardware accelerated supported [cite: 33] | [cite_start]**n/a**: Not applicable in specification[cite: 34].
-* [cite_start]*Note: Specific AMD generations are limited to specific driver versions; driver incompatibility can include hardware incompatibility[cite: 73].*
+* **Y**: Hardware accelerated supported | **n/a**: Not applicable in specification.
+* *Note: Specific AMD generations are limited to specific driver versions; driver incompatibility can include hardware incompatibility.*
 
 <details>
 <summary>💡 Click to expand AMD Driver Version History</summary>
 
-* **v1.5.2:** Adrenalin Edition (26.10.07.01)+. [cite_start]Updated FFmpeg to 8.0.1[cite: 36].
-* **v1.5.0:** Adrenalin Edition 25.10.2 (25.20.21.01)+. [cite_start]Added 4:4:4/4:2:2 chroma subsampling for Video Converter[cite: 37, 38].
-* **v1.4.36:** Adrenalin Edition 25.1.1 (24.30.31.03)+. [cite_start]Added B-frame support/picture management for AV1; high-quality presets for HEVC/AVC[cite: 39, 40].
-* **v1.4.35:** Adrenalin Edition 24.9.1 (24.20.11.01)+. Multi-HW instance encoder mode; [cite_start]FFmpeg 7.0; split frame encoding[cite: 41, 42].
-* **v1.4.34:** Adrenalin Edition 24.6.1 (24.10.21.01)+. [cite_start]Stable RADV drivers for AMF on Linux[cite: 43, 44].
-* **v1.4.33:** Adrenalin Edition 24.1.1 (23.40.02)+. [cite_start]DX12 support for encoding/PreAnalysis; public Vulkan[cite: 45, 46].
-* **v1.4.32:** Adrenalin Edition 23.12.1 (23.30.13.01)+. [cite_start]FRC component, VQEnhancer doc, FFmpeg 6.0[cite: 48, 49].
-* **v1.4.30:** Adrenalin Edition 23.5.2 (23.10.01.45)+. AMF wrappers for software encoders; [cite_start]FFmpeg 5.1.2[cite: 50, 51, 52].
-* **v1.4.29:** Adrenalin Edition 23.1.2 (22.40.01.34)+. [cite_start]Smart Access Video for AVC/HEVC/AV1[cite: 53].
-* **v1.4.28:** Adrenalin Edition 22.12.1 (22.40.00.24)+. AV1 encoding support; [cite_start]12-bit AV1 decoding[cite: 55].
-* **v1.4.26:** Adrenalin Edition 22.7.1 (22.20.15.01)+. [cite_start]PAQ, TAQ, and high motion quality boost[cite: 57, 58].
-* **v1.4.24:** Adrenalin Edition 22.3.1 (21.50.11.03)+. AMD Direct Capture; [cite_start]Vulkan HEVC encoder on Navi[cite: 60, 61].
-* **v1.4.23:** Adrenalin Edition 21.12.1 (21.40.11.03)+. [cite_start]Auto LTR encoder mode[cite: 62, 63].
-* **v1.4.21:** Adrenalin Edition 21.10.1 (21.30.25.01)+. PSNR/SSIM scores; QVBR rate control; [cite_start]HDR for HEVC[cite: 64, 65].
-* [cite_start]**v1.4.18:** Requires Vulkan SDK for some samples and Adrenalin 18.8.1+[cite: 67].
-* [cite_start]**v1.4.4:** Requires `OCL_SDK_Light` and Crimson Edition 17.7.2+[cite: 69, 70].
+* **v1.5.2:** Adrenalin Edition (26.10.07.01)+. Updated FFmpeg to 8.0.1.
+* **v1.5.0:** Adrenalin Edition 25.10.2 (25.20.21.01)+. Added 4:4:4/4:2:2 chroma subsampling for Video Converter.
+* **v1.4.36:** Adrenalin Edition 25.1.1 (24.30.31.03)+. Added B-frame support/picture management for AV1; high-quality presets for HEVC/AVC.
+* **v1.4.35:** Adrenalin Edition 24.9.1 (24.20.11.01)+. Multi-HW instance encoder mode; FFmpeg 7.0; split frame encoding.
+* **v1.4.34:** Adrenalin Edition 24.6.1 (24.10.21.01)+. Stable RADV drivers for AMF on Linux.
+* **v1.4.33:** Adrenalin Edition 24.1.1 (23.40.02)+. DX12 support for encoding/PreAnalysis; public Vulkan.
+* **v1.4.32:** Adrenalin Edition 23.12.1 (23.30.13.01)+. FRC component, VQEnhancer doc, FFmpeg 6.0.
+* **v1.4.30:** Adrenalin Edition 23.5.2 (23.10.01.45)+. AMF wrappers for software encoders; FFmpeg 5.1.2.
+* **v1.4.29:** Adrenalin Edition 23.1.2 (22.40.01.34)+. Smart Access Video for AVC/HEVC/AV1.
+* **v1.4.28:** Adrenalin Edition 22.12.1 (22.40.00.24)+. AV1 encoding support; 12-bit AV1 decoding.
+* **v1.4.26:** Adrenalin Edition 22.7.1 (22.20.15.01)+. PAQ, TAQ, and high motion quality boost.
+* **v1.4.24:** Adrenalin Edition 22.3.1 (21.50.11.03)+. AMD Direct Capture; Vulkan HEVC encoder on Navi.
+* **v1.4.23:** Adrenalin Edition 21.12.1 (21.40.11.03)+. Auto LTR encoder mode.
+* **v1.4.21:** Adrenalin Edition 21.10.1 (21.30.25.01)+. PSNR/SSIM scores; QVBR rate control; HDR for HEVC.
+* **v1.4.18:** Requires Vulkan SDK for some samples and Adrenalin 18.8.1+.
+* **v1.4.4:** Requires `OCL_SDK_Light` and Crimson Edition 17.7.2+.
 </details>
 
 ---
@@ -126,14 +126,14 @@ A hardware-accelerated transcoder for Intel QSV, AMD AMF, and NVIDIA NVENC, and 
 | **Weighted prediction** | N | N | Y | Y | Y | Y | Y | Y |
 | **Multiple reference frames** | N | N | N | N | Y | Y | Y | Y |
 
-* **Y**: Supported | [cite_start]**N**: Not supported[cite: 78, 82].
-* [cite_start]*\*Supported in select Pascal generation GPUs[cite: 79, 83].*
+* **Y**: Supported | **N**: Not supported.
+* *\*Supported in select Pascal generation GPUs.*
 
 ---
 
 ## ❌ Troubleshooting Tips
 
-* [cite_start]**Hardware-acceleration fails with 'Orig' format:** For HEVC, Intel is compatible with 8/10/12-bit formats, while NVENC and AMF support 8 and 10-bit[cite: 89]. [cite_start]If your file's format is outside this range, enforce a pixel format conversion, or use `libx265`/`libx264` to preserve it[cite: 91].
-* **Encoding fails midway:** Usually an insufficient memory (RAM) issue. [cite_start]Offload your RAM and try again[cite: 92].
-* **AMF 10-bit encoding fails:** Fails on AMD Adrenalin drivers below version 23.30. [cite_start]A driver update is required if the GPU supports it; encode in 8-bit otherwise[cite: 93].
-* **Slow first launch:** Expected behavior due to extraction overhead. [cite_start]Use the `onedir` portable version for a faster launch[cite: 94].
+* **Hardware-acceleration fails with 'Orig' format:** For HEVC, Intel is compatible with 8/10/12-bit formats, while NVENC and AMF support 8 and 10-bit. If your file's format is outside this range, enforce a pixel format conversion, or use `libx265`/`libx264` to preserve it.
+* **Encoding fails midway:** Usually an insufficient memory (RAM) issue. Offload your RAM and try again.
+* **AMF 10-bit encoding fails:** Fails on AMD Adrenalin drivers below version 23.30. A driver update is required if the GPU supports it; encode in 8-bit otherwise.
+* **Slow first launch:** Expected behavior due to extraction overhead. Use the `onedir` portable version for a faster launch.
